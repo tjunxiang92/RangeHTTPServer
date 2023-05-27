@@ -104,6 +104,7 @@ class RangeRequestHandler(SimpleHTTPRequestHandler):
 
     def end_headers(self):
         self.send_header('Accept-Ranges', 'bytes')
+        self.send_header('Access-Control-Allow-Origin', '*')
         return SimpleHTTPRequestHandler.end_headers(self)
 
     def copyfile(self, source, outputfile):
